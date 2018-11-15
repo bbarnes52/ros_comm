@@ -25,6 +25,7 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/include/ros/common.h.in ${CATKIN_DEVE
 
 find_package(Boost REQUIRED COMPONENTS chrono filesystem signals system)
 
+message(STATUS "Moar environment info: catkin_include '${catkin_INCLUDE_DIRS}' '${Boost_INCLUDE_DIRS}'")
 include_directories(include ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_INCLUDE_DESTINATION}/ros ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
 
 add_message_files(
@@ -52,6 +53,7 @@ if(CMAKE_THREAD_LIBS_INIT)
   endif()
 endif()
 
+message(STATUS "Pre catkin_package")
 catkin_package(
   INCLUDE_DIRS include ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_INCLUDE_DESTINATION}/ros
   LIBRARIES roscpp ${PTHREAD_LIB}
@@ -140,6 +142,7 @@ if(WIN32)
   target_link_libraries(roscpp ws2_32)
 endif()
 
+message(STATUS "Pre install")
 #explicitly install library and includes
 install(TARGETS roscpp
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
