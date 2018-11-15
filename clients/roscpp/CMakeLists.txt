@@ -20,6 +20,7 @@ list(GET roscpp_VERSION_LIST 0 roscpp_VERSION_MAJOR)
 list(GET roscpp_VERSION_LIST 1 roscpp_VERSION_MINOR)
 list(GET roscpp_VERSION_LIST 2 roscpp_VERSION_PATCH)
 
+message(STATUS "Environment info: devel prefix '${CATKIN_DEVEL_PREFIX}' global include '${CATKIN_GLOBAL_INCLUDE_DESTINATION}' cmake current '${CMAKE_CURRENT_SOURCE_DIR}'")
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/include/ros/common.h.in ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_INCLUDE_DESTINATION}/ros/common.h)
 
 find_package(Boost REQUIRED COMPONENTS chrono filesystem signals system)
