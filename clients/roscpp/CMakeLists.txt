@@ -28,6 +28,12 @@ find_package(Boost REQUIRED COMPONENTS chrono filesystem signals system)
 message(STATUS "Moar environment info: catkin_include '${catkin_INCLUDE_DIRS}' '${Boost_INCLUDE_DIRS}'")
 include_directories(include ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_INCLUDE_DESTINATION}/ros ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
 
+message(STATUS "print_all_variables------------------------------------------{")
+get_cmake_property(_variableNames VARIABLES)
+foreach (_variableName ${_variableNames})
+    message(STATUS "${_variableName}=${${_variableName}}")
+endforeach()
+
 add_message_files(
   DIRECTORY msg
   FILES Logger.msg
