@@ -26,7 +26,7 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/include/ros/common.h.in ${CATKIN_DEVE
 find_package(Boost REQUIRED COMPONENTS chrono filesystem signals system)
 
 message(STATUS "Moar environment info: catkin_include '${catkin_INCLUDE_DIRS}' '${Boost_INCLUDE_DIRS}'")
-include_directories(include ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_INCLUDE_DESTINATION}/ros ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_INCLUDE_DESTINATION} ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
+include_directories(include ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_INCLUDE_DESTINATION} ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
 
 message(STATUS "print_all_variables------------------------------------------{")
 get_cmake_property(_variableNames VARIABLES)
