@@ -33,5 +33,7 @@
 
 import sys
 print(sys.path)
+import os
+print(os.environ)
 import roslaunch
 roslaunch.main()
