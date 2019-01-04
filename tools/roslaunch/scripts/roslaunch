@@ -32,8 +32,8 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 import sys
-print(sys.path)
+print("PATH: {}".format(sys.path))
 import os
-print(os.environ)
+print("Environment: {}".format(os.environ))
 import roslaunch
 roslaunch.main()

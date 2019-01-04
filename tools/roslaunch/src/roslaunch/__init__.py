@@ -215,6 +215,7 @@ def _validate_args(parser, options, args):
         parser.error("only one of [--nodes, --find-node, --args --ros-args] may be specified")
     
 def main(argv=sys.argv):
+    print("Main called")
     options = None
     logger = None
     try:
