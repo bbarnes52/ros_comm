@@ -252,7 +252,7 @@ def main(argv=sys.argv):
                 node_args.print_node_list(args)
             return
 
-    """
+        """
         # we have to wait for the master here because we don't have the run_id yet
         if options.wait_for_master:
             if options.core:
@@ -312,6 +312,7 @@ def main(argv=sys.argv):
             p.start()
             p.spin()
 
+        """
     except RLException as e:
         roslaunch_core.printerrlog(str(e))
         roslaunch_core.printerrlog('The traceback for the exception was written to the log file')
@@ -333,7 +334,6 @@ def main(argv=sys.argv):
         if options is not None and options.pid_fn:
             try: os.unlink(options.pid_fn)
             except os.error: pass
-    """
 
 
 if __name__ == '__main__':
