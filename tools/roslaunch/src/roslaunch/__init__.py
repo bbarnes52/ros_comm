@@ -34,7 +34,7 @@
 
 from __future__ import print_function
 
-print("TOP roslaunch")
+print("Top of roslaunch")
 
 import os
 import logging
