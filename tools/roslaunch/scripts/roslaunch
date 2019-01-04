@@ -35,5 +35,7 @@ import sys
 print("PATH: {}".format(sys.path))
 import os
 print("Environment: {}".format(os.environ))
+import time
 import roslaunch
+time.sleep(5)
 roslaunch.main()
