@@ -220,8 +220,6 @@ def _validate_args(parser, options, args):
     
 def main(argv=sys.argv):
     print("Main called")
-    import time
-    time.sleep(5)
     options = None
     logger = None
     try:
@@ -254,6 +252,7 @@ def main(argv=sys.argv):
                 node_args.print_node_list(args)
             return
 
+    """
         # we have to wait for the master here because we don't have the run_id yet
         if options.wait_for_master:
             if options.core:
@@ -334,6 +333,7 @@ def main(argv=sys.argv):
         if options is not None and options.pid_fn:
             try: os.unlink(options.pid_fn)
             except os.error: pass
+    """
 
 
 if __name__ == '__main__':
