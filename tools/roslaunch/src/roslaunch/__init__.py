@@ -32,6 +32,8 @@
 #
 # Revision $Id$
 
+print("TOP roslaunch")
+
 from __future__ import print_function
 
 import os
@@ -69,6 +71,8 @@ except:
 from rosmaster.master_api import NUM_WORKERS
 
 NAME = 'roslaunch'
+
+print("post imports")
 
 def configure_logging(uuid):
     """
