@@ -220,6 +220,8 @@ def _validate_args(parser, options, args):
     
 def main(argv=sys.argv):
     print("Main called")
+    import time
+    time.sleep(5)
     options = None
     logger = None
     try:
