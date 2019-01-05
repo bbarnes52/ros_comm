@@ -260,10 +260,10 @@ def main(argv=sys.argv):
 
         # write the pid to a file
         write_pid_file(options.pid_fn, options.core, options.port)
-        """
 
         # spin up the logging infrastructure. have to wait until we can read options.run_id
         uuid = rlutil.get_or_generate_uuid(options.run_id, options.wait_for_master)
+        """
         configure_logging(uuid)
 
         # fails here.
