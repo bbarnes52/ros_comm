@@ -251,8 +251,7 @@ def main(argv=sys.argv):
             else:
                 node_args.print_node_list(args)
             return
-
-        """
+        # works til here
         # we have to wait for the master here because we don't have the run_id yet
         if options.wait_for_master:
             if options.core:
@@ -265,6 +264,8 @@ def main(argv=sys.argv):
         # spin up the logging infrastructure. have to wait until we can read options.run_id
         uuid = rlutil.get_or_generate_uuid(options.run_id, options.wait_for_master)
         configure_logging(uuid)
+
+        """
 
         # #3088: don't check disk usage on remote machines
         if not options.child_name and not options.skip_log_check:
