@@ -263,7 +263,7 @@ def main(argv=sys.argv):
         # spin up the logging infrastructure. have to wait until we can read options.run_id
         # THIS LINE IS THE CULPRIT
         print("run_id: {}".format(options.run_id))
-        print("wait_for_master: {}".format(options.wait_for_master))_
+        print("wait_for_master: {}".format(options.wait_for_master))
         uuid = rlutil.get_or_generate_uuid(options.run_id, options.wait_for_master)
         """
         configure_logging(uuid)
