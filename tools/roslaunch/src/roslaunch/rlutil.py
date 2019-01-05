@@ -115,12 +115,15 @@ def _wait_for_master():
     """
     m = roslaunch.core.Master() # get a handle to the default master
     is_running = m.is_running()
+    print("m: {}".format(m)
+    print("is_running: {}".format(is_running)
     if not is_running:
         roslaunch.core.printlog("roscore/master is not yet running, will wait for it to start")
     while not is_running:
         time.sleep(0.1)
         is_running = m.is_running()
     if is_running:
+        print("master running!")
         roslaunch.core.printlog("master has started, initiating launch")
     else:
         raise RuntimeError("unknown error waiting for master to start")
