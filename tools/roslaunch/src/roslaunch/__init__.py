@@ -256,12 +256,14 @@ def main(argv=sys.argv):
             if options.core:
                 parser.error("--wait cannot be used with roscore")
             rlutil._wait_for_master()            
-        # works til here
 
         # write the pid to a file
         write_pid_file(options.pid_fn, options.core, options.port)
 
         # spin up the logging infrastructure. have to wait until we can read options.run_id
+        # THIS LINE IS THE CULPRIT
+        print("run_id: {}".format(options.run_id))
+        print("wait_for_master: {}".format(options.wait_for_master))_
         uuid = rlutil.get_or_generate_uuid(options.run_id, options.wait_for_master)
         """
         configure_logging(uuid)
