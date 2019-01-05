@@ -251,16 +251,16 @@ def main(argv=sys.argv):
             else:
                 node_args.print_node_list(args)
             return
-        # works til here
         # we have to wait for the master here because we don't have the run_id yet
         if options.wait_for_master:
             if options.core:
                 parser.error("--wait cannot be used with roscore")
             rlutil._wait_for_master()            
-        """
+        # works til here
 
         # write the pid to a file
         write_pid_file(options.pid_fn, options.core, options.port)
+        """
 
         # spin up the logging infrastructure. have to wait until we can read options.run_id
         uuid = rlutil.get_or_generate_uuid(options.run_id, options.wait_for_master)
