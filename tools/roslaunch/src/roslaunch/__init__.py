@@ -265,10 +265,9 @@ def main(argv=sys.argv):
         print("run_id: {}".format(options.run_id))
         print("wait_for_master: {}".format(options.wait_for_master))
         uuid = rlutil.get_or_generate_uuid(options.run_id, options.wait_for_master)
-        """
+        print("uuid: {}".format(uuid))
         configure_logging(uuid)
 
-        # fails here.
         # #3088: don't check disk usage on remote machines
         if not options.child_name and not options.skip_log_check:
             # #2761
@@ -315,7 +314,6 @@ def main(argv=sys.argv):
             p.start()
             p.spin()
 
-        """
     except RLException as e:
         roslaunch_core.printerrlog(str(e))
         roslaunch_core.printerrlog('The traceback for the exception was written to the log file')

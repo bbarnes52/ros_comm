@@ -181,8 +181,7 @@ def get_or_generate_uuid(options_runid, options_wait_for_master):
         except:
             if not options_wait_for_master:
                 val = roslaunch.core.generate_run_id()
-    print("BBB")
-    print(val)
+    print("RUN ID: ".format(val))
     return val
     
 def check_roslaunch(f, use_test_depends=False):
