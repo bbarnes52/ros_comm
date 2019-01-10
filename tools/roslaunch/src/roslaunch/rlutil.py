@@ -173,21 +173,16 @@ def get_or_generate_uuid(options_runid, options_wait_for_master):
     # #773: Generate a run_id to use if we launch a master
     # process.  If a master is already running, we'll get the
     # run_id from it instead
-    print("1")
     param_server = rosgraph.Master('/roslaunch')
-    print("2")
     val = None
     while val is None:
         try:
-            print("2.5")
             val = param_server.getParam('/run_id')
         except:
-            print("3")
             if not options_wait_for_master:
-                print("4")
                 val = roslaunch.core.generate_run_id()
-                print("5")
-    print("6")
+    print("BBB")
+    print(val)
     return val
     
 def check_roslaunch(f, use_test_depends=False):

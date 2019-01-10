@@ -95,18 +95,12 @@ class Master(object):
         :raises: :exc:`ValueError` If ROS master uri not set properly
         """
 
-        print("11")
 
         if master_uri is None:
-            print("12")
             master_uri = get_master_uri()
-        print("13")
         self._reinit(master_uri)
-        print("14")
         self.caller_id = make_caller_id(caller_id) #resolve
-        print("15")
         if self.caller_id[-1] == '/':
-            print("16")
             self.caller_id = self.caller_id[:-1]
         
     def _reinit(self, master_uri):
